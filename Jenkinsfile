@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t thejika/nodejsapp:2 .'
+        sh 'docker build -t thejika/nodejsapp1:2 .'
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push thejika/nodejsapp:2'
+        sh 'docker push thejika/nodejsapp1:2'
       }
     }
     stage('ssh'){
