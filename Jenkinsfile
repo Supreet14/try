@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+    EXAMPLE_CREDS=credentials(')
     
   }
   stages {
@@ -17,11 +18,13 @@ pipeline {
     }
     stage('Push') {
       steps {
+       
         sh 'docker push thejika/nodejsapp1:2'
       }
     }
     stage('ssh'){
       steps{
+         sh('curl -u $EXAMPLE_CREDS_USR :$EXAMPLE_CREDS_PSW'
         sh 'mkdir /home/ec2-user/test'
       }
     }
