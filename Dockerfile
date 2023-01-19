@@ -1,6 +1,6 @@
 FROM node:12
 # To Create nodejsapp directory
-WORKDIR /nodejsapp
+WORKDIR /nodejsapp1
 # To Install All dependencies
 COPY package*.json ./
 RUN npm install
