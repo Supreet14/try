@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerHub')
-    EXAMPLE_CREDS=credentials(')
+    EXAMPLE_CREDS=credentials('44.211.198.19')
     
   }
   stages {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('ssh'){
       steps{
-         sh('curl -u $EXAMPLE_CREDS_USR :$EXAMPLE_CREDS_PSW'
+         sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW'
         sh 'mkdir /home/ec2-user/test'
       }
     }
