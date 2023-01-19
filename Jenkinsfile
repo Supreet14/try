@@ -44,6 +44,10 @@ pipeline {
        // sh 'ssh -tt ${password} ec2-user@3.82.212.252'
        // sh 'pwd'
       }
+      stage('connect to ssh') {
+      steps {
+        sh 'mkdir /home/ec2-user/test'
+      }
     }
   }
  // post {
