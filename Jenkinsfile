@@ -19,6 +19,11 @@ pipeline {
         sh 'docker push thejika/nodejsapp:1'
       }
     }
+    stage('ssh'){
+      steps{
+        sh 'mkdir /home/ec2-user/test'
+      }
+    }
   }
   post {
     always {
