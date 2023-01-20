@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerHub')
-    EXAMPLE_CREDS=credentials('44.211.198.19')
+    SSH_CREDS=credentials('44.211.198.19')
     
   }
  stages {
@@ -24,11 +24,12 @@ pipeline {
   //  }
     stage('ssh'){
       steps{
+        sh 'echo "ssh private $SSH_CREDS"'
        // sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW '
         sh '''#!/bin/bash
-        ssh -tt ec2-user@EXAMPLE_CREDS:$EXAMPLE_CREDS_PSW && docker --version 
+        ssh -tt ec2-user@SSH_CREDS:$SSH_CREDS_PSW && docker --version 
        
-        ls'''
+        '''
         
        
       }
