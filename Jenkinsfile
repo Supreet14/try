@@ -24,7 +24,9 @@ pipeline {
   //  }
     stage('ssh'){
       steps{
-        sh 'echo "ssh private $SSH_CREDS"'
+        sh 'echo "SSH private is loacted at $SSH_CREDS"'
+        sh 'echo "SSH user is $SSH_CREDS_USR"'
+        sh 'echo "SSH passphrase is $SSH_CREDS_PSW"'
        // sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW '
         sh '''#!/bin/bash
         ssh -tt ec2-user@$SSH_CREDS
