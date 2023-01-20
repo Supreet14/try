@@ -26,7 +26,7 @@ pipeline {
       steps{
         
         sh '''#!/bin/bash
-        ssh -tt linux@44.211.198.19
+        ssh -tt ec2-user@44.211.198.19 && docker --version 
         ls'''
         
        
