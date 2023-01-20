@@ -24,7 +24,7 @@ pipeline {
   //  }
     stage('ssh'){
       steps{
-        echo ===>about to ssh
+        
         sh '''#!/bin/bash
         ssh -tt linux@44.211.198.19
         ls'''
