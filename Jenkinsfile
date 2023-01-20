@@ -25,7 +25,7 @@ pipeline {
     stage('ssh'){
       steps{
          sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com'
-        sh 'mkdir /home/ec2-user/test'
+        sh 'sudo mkdir /home/ec2-user/test'
       }
     }
   }
