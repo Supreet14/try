@@ -5,7 +5,7 @@ pipeline {
     EXAMPLE_CREDS=credentials('44.211.198.19')
     
   }
- // stages {
+ stages {
   //  stage('Build') {
     //  steps {
       // sh 'docker build -t thejika/nodejsapp1:2 .'
