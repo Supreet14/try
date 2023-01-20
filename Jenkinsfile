@@ -5,27 +5,31 @@ pipeline {
     EXAMPLE_CREDS=credentials('44.211.198.19')
     
   }
-  stages {
-    stage('Build') {
-      steps {
-       sh 'docker build -t thejika/nodejsapp1:2 .'
-     }
-    }
+ // stages {
+  //  stage('Build') {
+    //  steps {
+      // sh 'docker build -t thejika/nodejsapp1:2 .'
+    // }
+  //  }
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
-    stage('Push') {
-     steps {
+   // stage('Push') {
+    // steps {
        
-       sh 'docker push thejika/nodejsapp1:2'
-      }
-    }
+      // sh 'docker push thejika/nodejsapp1:2'
+     // }
+  //  }
     stage('ssh'){
       steps{
-         sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com'
-        sh 'sudo mkdir /home/ec2-user/test'
+        echo ===>about to ssh
+        sh '''#!/bin/bash
+        ssh -tt linux@44.211.198.19
+        ls'''
+        
+       
       }
     }
   }
