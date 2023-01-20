@@ -24,9 +24,9 @@ pipeline {
   //  }
     stage('ssh'){
       steps{
-        sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW '
+       // sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW '
         sh '''#!/bin/bash
-        ssh -tt ec2-user@44.211.198.19 && docker --version 
+        ssh -tt ec2-user@EXAMPLE_CREDS:$EXAMPLE_CREDS_PSW && docker --version 
        
         ls'''
         
