@@ -27,14 +27,15 @@ pipeline {
         SSH_CREDS = credentials('44.211.198.19')
       }
       steps{
-        sh 'echo "SSH private is loacted at $SSH_CREDS"'
-        sh 'echo "SSH user is $SSH_CREDS_USR"'
+       // sh 'echo "SSH private is loacted at $SSH_CREDS"'
+       // sh 'echo "SSH user is $SSH_CREDS_USR"'
        
        // sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW '
-        sh '''#!/bin/bash
-        ssh -tt ec2-user@$SSH_CREDS
+       // sh '''#!/bin/bash
+       // ssh -tt ec2-user@$SSH_CREDS
        
-        '''
+       // '''
+        withcredentials
         
        
       }
