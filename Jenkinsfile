@@ -11,11 +11,11 @@ pipeline {
       // sh 'docker build -t thejika/nodejsapp1:2 .'
     // }
   //  }
-    stage('Login') {
-      steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-      }
-    }
+   // stage('Login') {
+    //  steps {
+     //   sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+     // }
+   // }
    // stage('Push') {
     // steps {
        
@@ -43,9 +43,9 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      sh 'docker logout'
-    }
-  }
+ // post {
+   // always {
+     // sh 'docker logout'
+  //  }
+ // }
 }
