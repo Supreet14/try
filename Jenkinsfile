@@ -23,9 +23,9 @@ pipeline {
      // }
   //  }
     stage('ssh'){
-      environment {
-        SSH_CREDS = credentials('44.211.198.19')
-      }
+     // environment {
+      //  SSH_CREDS = credentials('44.211.198.19')
+     // }
       steps{
        // sh 'echo "SSH private is loacted at $SSH_CREDS"'
        // sh 'echo "SSH user is $SSH_CREDS_USR"'
@@ -36,9 +36,9 @@ pipeline {
        
        // '''
         withCredentials([sshUserPrivateKey(credentialsId: '44.211.198.19',keyFileVariable:'password')])
-        sh 'ssh -t ${password} ec2-user@
+        sh 'ssh -t ${password} ec2-user@3.82.212.252
         sh 'chmod 400 ${password}'
-        sh 'ssh -tt ${password} ec2-user@
+        sh 'ssh -tt ${password} ec2-user@3.82.212.252
         sh 'pwd'
       }
     }
