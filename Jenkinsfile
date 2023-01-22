@@ -36,9 +36,9 @@ pipeline {
        
        // '''
         withCredentials([sshUserPrivateKey(credentialsId: '44.211.198.19',keyFileVariable:'password')])
-        sh 'ssh -t ${password} ec2-user@3.82.212.252
+        sh 'ssh -t ${password} ec2-user@3.82.212.252'
         sh 'chmod 400 ${password}'
-        sh 'ssh -tt ${password} ec2-user@3.82.212.252
+        sh 'ssh -tt ${password} ec2-user@3.82.212.252'
         sh 'pwd'
       }
     }
