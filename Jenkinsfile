@@ -31,7 +31,7 @@ pipeline {
        // sh 'echo "SSH user is $SSH_CREDS_USR"'
         sh 'ssh -t $SSH_CREDS ec2-user@3.82.212.252'
          sh 'chmod 400 $SSH_CREDS'
-       sh 'ssh -tt ec2-user@$SSH_CREDS@3.82.212.252
+       sh 'ssh -tt ec2-user@$SSH_CREDS@3.82.212.252'
    
         sh 'curl -u $SSH_CREDS_USR:$SSH_CREDS_PSW '
         sh '''#!/bin/bash
