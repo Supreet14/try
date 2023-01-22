@@ -46,8 +46,16 @@ pipeline {
       }
       stage('connect to ssh') {
       steps {
+        sh 'curl -u'
         sh 'mkdir /home/ec2-user/test'
       }
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ssh_1', keyFileVariable: 'password')]) {
+    sh 'ssh -t ${password} ec2-user@35.88.242.190'
+    sh 'chmod 400 ${password}'
+    sh 'ssh -tt ${password} ec2-user@35.88.242.190'
+    sh 'ls'
+}
     }
   }
  // post {
