@@ -3,8 +3,8 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerHub')
   }
- /* stages {
-    stage('Build') {
+  stages {
+    /*stage('Build') {
       steps {
         sh 'docker build -t thejika/thejika:1 .'
       }
