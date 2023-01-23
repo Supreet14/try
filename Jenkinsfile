@@ -23,9 +23,9 @@ pipeline {
    stage('Ansible')
     {
       steps{
-          ansiblePlaybook credentialsId: '44.211.198.19', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'ansible.yml'
+          ansiblePlaybook credentialsId: 'webserver', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'ansible.yml'
           //sh"""ssh -o StrictHostKeyChecking=yes -l ec2-user 54.250.107.129 uname -a  
-               //docker images"""
+               //docker images
           //sh'docker --version'
           //sh'sudo service docker start'
           //sh'docker pull supreet14/nodejsapp:2'
