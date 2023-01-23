@@ -26,7 +26,9 @@ pipeline {
         sshagent(['44.211.198.19'])
         {
           sh'''ssh -o StrictHostKeyChecking=no -l ec2-user 3.86.83.128 uname -a
-               git --version'''
+               docker --version
+               ls
+               '''
         }
       }
     }
