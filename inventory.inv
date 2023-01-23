@@ -1,2 +1,2 @@
 [webservers]
-44.204.31.71 ansible_user=awstgremoteweb
+44.204.31.71 ansible_user=ec2-user
