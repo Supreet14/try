@@ -19,7 +19,7 @@ pipeline {
         sh 'docker push thejika/nodejsapp:3'
       }
     }
-  }
+  
    stage('Ansible')
     {
       steps{
