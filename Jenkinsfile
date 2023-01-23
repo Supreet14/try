@@ -20,17 +20,17 @@ pipeline {
       }
     }
   }*/
-   stage('EC2')
+   stage('Ansible')
     {
       steps{
-        sshagent(['44.211.198.19'])
-        {
-          sh'ssh -o StrictHostKeyChecking=no -l ec2-user 3.86.83.128 uname -a'
-          sh'ls-ltrh'
-          sh 'git --version'
-               
-               
-        }
+          ansiblePlaybook credentialsId: '', disableHostKeyChecking: true, installation: 'ansible', inventory: 'testserver.inv', playbook: 'docker-ansible.yml'
+          //sh"""ssh -o StrictHostKeyChecking=yes -l ec2-user 54.250.107.129 uname -a  
+               //docker images"""
+          //sh'docker --version'
+          //sh'sudo service docker start'
+          //sh'docker pull supreet14/nodejsapp:2'
+          //sh'docker run supreet14/nodejsapp:2'
+          //sh'docker images'
       }
     }
   }
@@ -38,5 +38,5 @@ pipeline {
     always {
       sh 'docker logout'
     }
-  }
+}
 }
