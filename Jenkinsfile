@@ -3,22 +3,22 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerHub')
   }
-  stages {
+ /* stages {
     stage('Build') {
       steps {
         sh 'docker build -t thejika/thejika:1 .'
       }
-    }
+    }*/
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
-    stage('Push') {
+   /* stage('Push') {
       steps {
         sh 'docker push thejika/thejika:1'
       }
-    }
+    }*/
   
    stage('Ansible')
     {
