@@ -6,4 +6,4 @@
      command: docker pull thejika/nodejsapp1:2
    
    - name: run
-     command: docker run -p 3000:3000 thejika/nodejsapp1:2
+     command: docker run -p 4000:3000 thejika/nodejsapp1:2
