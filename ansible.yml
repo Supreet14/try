@@ -3,7 +3,7 @@
   become: True
   tasks:
    - name: pulling image
-     command: docker pull thejika/nodejsapp1:2
+     command: docker pull thejika/thejika:1
    
    - name: run
-     command: docker run -p 4000:3000 thejika/nodejsapp1:2
+     command: docker run -p 4000:3000 thejika/thejika:1
