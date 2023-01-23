@@ -27,7 +27,7 @@ pipeline {
         {
           sh'ssh -o StrictHostKeyChecking=no -l ec2-user 3.86.83.128 uname -a'
           sh'ls-ltrh'
-          sh 'docker --version'
+          sh 'git --version'
                
                
         }
